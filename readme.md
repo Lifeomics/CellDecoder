@@ -192,4 +192,7 @@ PPI explanations of the cells
 
 ### Cite Cell  Decoder:
 
-TODO
+Zhu et al. Decoding cell identity with multi-scale explainable deep learning. bioRxiv 2024.02.05.578922
+
+[https://doi.org/10.1101/2024.02.05.578922](url)
+
