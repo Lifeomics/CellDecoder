@@ -122,6 +122,7 @@ def load_data(
     fn_h5ad=None,
     device="cpu",
     cls2id=None,
+    cell_label = "cell_type"
 ):
     """
     features: columns=[sample_id, protein1,protein2,...]
@@ -138,11 +139,11 @@ def load_data(
         data = sc.read_h5ad(osp.join(dataroot, fn_h5ad))
         features = pd.DataFrame(data.X, columns=data.var_names).reset_index()
         ppi = data.uns["ppi"]
-        sampleid = data.obs["cell_type"].reset_index().reset_index()
+        sampleid = data.obs[cell_label].reset_index().reset_index()
         if not cls2id:
-            id2cls = sorted(np.unique(sampleid["cell_type"]))
+            id2cls = sorted(np.unique(sampleid[cell_label]))
             cls2id = dict(zip(id2cls, range(len(id2cls))))
-        sampleid["index"] = sampleid["cell_type"].apply(lambda x: cls2id[x])
+        sampleid["index"] = sampleid[cell_label].apply(lambda x: cls2id[x])
         hierarchy_graph = eval(data.uns["hierarchy"])
 
     y_dict = dict(sampleid.values[:, :2])
