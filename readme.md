@@ -75,7 +75,9 @@ import celldecoder
 dataset = "./data/hBone/hBone_ref_adata.h5ad"
 device_id = 1
 log_dir = f"./log/{dataset}"
-celldecoder.train(dataset = dataset, device_id = device_id, log_dir = log_dir)
+# Train the cell decoder using the specified dataset `dataset` on the device `device_id`,
+# logging to the specified directory `log_dir`, and using the `cell_label` parameter to specify the cell type label.
+celldecoder.train(dataset=dataset, device_id=device_id, log_dir=log_dir, cell_label="cell_type")
 ```
 
 #### Input:
