@@ -18,7 +18,7 @@ def get_args(args=None):
     parser.add_argument("--num_classes", type=int, default=-1, help="number of classes")
     parser.add_argument("--num_samples", type=int, default=-1, help="number of samples")
     parser.add_argument("--fn_process", type=str, default="processed-train", help="processed data file")
-    
+    parser.add_argument("--cell_label", type=str, default="cell_type", help="cell labels")
 
     # setting
     parser.add_argument("--seed", type=int, default=0, help="random seed")
