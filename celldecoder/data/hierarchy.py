@@ -7,7 +7,7 @@ from os.path import join
 import re
 
 # knowledge files
-reactome_dir = "../data/reactome"  #'../reactome/pathway'
+reactome_dir = "../../../data/reactome"  #'../reactome/pathway'
 interaction_dir = "../data/string"  # ppi data
 relations = join(reactome_dir, "ReactomePathwaysRelation.txt")
 pathways = join(reactome_dir, "ReactomePathways.txt")
